@@ -1,8 +1,11 @@
 <div align="right">
+  <a href="https://www.python.org/"><img src="/icons/image-files.png" width="30" alt="Dataset"></a>
   <a href="https://www.python.org/"><img src="/icons/python.png" width="30"></a>    <a href="https://www.tensorflow.org/?gclid=CjwKCAiAqaWdBhAvEiwAGAQltkZJhmQwCzefx4SSIoMwMqkLv_m9egVISKjjJ3MY4sYrJFsqA5FuuBoCPg4QAvD_BwE"><img src="/icons/google-tensorflow-icon.png" width="30"></a>
 </div>
 <div align="center" >
-<img src="/icons/barrier.png" width="200">
+<img src="/icons/barrier.png" width="170">&nbsp&nbsp&nbsp
+<img src="/icons/car(1).png" width="110">&nbsp&nbsp&nbsp
+<img src="/icons/toll-road.png" width="200">
    
 ## Object Detection System for Vehicles
 <br>
