@@ -1,16 +1,26 @@
-# Object-Detection-System-for-Vehicles
-
-## Prepared for CSE4088 - Introduction to Machine Learning Course
-
-### Prepared By
-
-<div style="display: flex; ">
-  <div style="display: flex; flex-direction: column; align-items: center">
-    <img src="./icons/dev2.png" />
-    <p>Baris Hazar</p>
-  </div>
-  <div style="display: flex; flex-direction: column; align-items: center">
-    <img src="./icons/dev1.png" />
-    <p>Ismail Oksuz</p>
-  </div>
+<div align="right">
+  <a href="https://www.python.org/"><img src="/icons/python.png" width="30"></a>    <a href="https://www.tensorflow.org/?gclid=CjwKCAiAqaWdBhAvEiwAGAQltkZJhmQwCzefx4SSIoMwMqkLv_m9egVISKjjJ3MY4sYrJFsqA5FuuBoCPg4QAvD_BwE"><img src="/icons/google-tensorflow-icon.png" width="30"></a>
 </div>
+<div align="center" >
+<img src="/icons/barrier.png" width="200">
+   
+## Object Detection System for Vehicles
+<br>
+<img src="/icons/dev1.png" width="140">
+
+### **Prepared by**
+
+|  <img src="/icons/card.png" width="30"> | Name&Surname |<img src="/icons/github.png" width="30">|
+|---|---|---|
+|150119516   |**İsmail ÖKSÜZ**   |<a href="https://github.com/ismailoksuz/">ismailoksuz</a>|
+|150118019   |**Barış HAZAR**   |<a href="https://github.com/barishazar3431/">barishazar3431</a>|
+<br>
+</div>
+<hr>
+<div align="left">
+Prepared for CSE 4088 - Introduction to Machine Learning Course Term Project
+</div>
+
+
+
+
