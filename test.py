@@ -1,28 +1,45 @@
 import tensorflow as tf
 import tensorflow.keras as keras
+import matplotlib.pyplot as plt
 import numpy as np
 
 class_names = ['Ambulance', 'Bicycle', 'Bus', 'Car',
-               'Helicopter', 'Limousine', 'Motorcycle', 'Taxi', 'Truck', 'Van']
+               'Motorcycle', 'Taxi', 'Truck', 'Van']
 img_height = 180
 img_width = 180
 # Load the saved model
 model = keras.models.load_model('vehicle_model')
 
 # Download and preprocess the image
-sunflower_url = 'https://contents.mediadecathlon.com/s922848/k$48172fb53121a8d65b84ec23ad3fe28b/btwin%20velo%2016%20%20500%20dark%20hero.jpg'
-sunflower_path = tf.keras.utils.get_file('yeni', origin=sunflower_url)
+image_url = 'https://cms.brixton-motorcycles.com//wp-content/uploads/2021/05/AE9I1680.jpg'
+image_path = tf.keras.utils.get_file('example5', origin=image_url)
 
+original_img = tf.keras.utils.load_img(image_path)
 img = tf.keras.utils.load_img(
-    sunflower_path, target_size=(img_height, img_width)
+    image_path, target_size=(img_height, img_width)
 )
 img_array = tf.keras.utils.img_to_array(img)
 img_array = tf.expand_dims(img_array, 0)  # Create a batch
 
 predictions = model.predict(img_array)
-score = tf.nn.softmax(predictions[0])
+scores = tf.nn.softmax(predictions[0])
 
-print(
-    "This image most likely belongs to {} with a {:.2f} percent confidence."
-    .format(class_names[np.argmax(score)], 100 * np.max(score))
-)
+# Get the top three indices
+top_indices = tf.math.top_k(scores, k=3).indices
+
+# Plot the image
+plt.imshow(original_img)
+plt.axis('off')
+
+# Print the top three guesses with confidence levels
+print("Top 3 guesses:")
+for i in range(3):
+    print("{}: {:.2f}%".format(class_names[top_indices[i]], 100 * scores[top_indices[i]]))
+
+# Add the top three guesses and confidence levels to the plot
+text = "Top guesses:\n"
+for i in range(3):
+    text += "{}: {:.2f}%\n".format(class_names[top_indices[i]], 100 * scores[top_indices[i]])
+plt.text(0, -20, text, fontsize=14, ha="left", va="top", bbox=dict(facecolor="w", alpha=0.5))
+
+plt.show()
