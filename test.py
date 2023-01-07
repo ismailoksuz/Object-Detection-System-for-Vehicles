@@ -11,8 +11,8 @@ img_width = 180
 model = keras.models.load_model('vehicle_model')
 
 # Download and preprocess the image
-image_url = 'https://cms.brixton-motorcycles.com//wp-content/uploads/2021/05/AE9I1680.jpg'
-image_path = tf.keras.utils.get_file('example5', origin=image_url)
+image_url = 'https://mcn-images.bauersecure.com/wp-images/58950/615x405/bmw_gs310r.jpg'
+image_path = tf.keras.utils.get_file('example44', origin=image_url)
 
 original_img = tf.keras.utils.load_img(image_path)
 img = tf.keras.utils.load_img(
@@ -37,7 +37,7 @@ for i in range(3):
     print("{}: {:.2f}%".format(class_names[top_indices[i]], 100 * scores[top_indices[i]]))
 
 # Add the top three guesses and confidence levels to the plot
-text = "Top guesses:\n"
+text = "Top 3 Guesses:\n"
 for i in range(3):
     text += "{}: {:.2f}%\n".format(class_names[top_indices[i]], 100 * scores[top_indices[i]])
 plt.text(0, -20, text, fontsize=14, ha="left", va="top", bbox=dict(facecolor="w", alpha=0.5))

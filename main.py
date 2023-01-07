@@ -55,7 +55,7 @@ model = Sequential([
     layers.MaxPooling2D(),
     layers.Conv2D(64, 3, padding='same', activation='relu'),
     layers.MaxPooling2D(),
-    layers.Dropout(0.3),  # Add dropout
+    layers.Dropout(0.45),  # Add dropout
     layers.Flatten(),
     layers.Dense(128, activation='relu'),
     layers.Dense(num_classes, name="outputs")
@@ -69,7 +69,7 @@ model.compile(optimizer='adam',
 
 model.summary()
 
-epochs = 25
+epochs = 30
 
 def train_model():
     # Train the model
